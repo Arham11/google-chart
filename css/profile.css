@@ -2,10 +2,10 @@
     padding: 25px;
 }
 .arc-details-date{
-    margin-bottom: 20px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .language-change{
     display: none;
@@ -34,13 +34,48 @@
     font-weight: 600;
     color: #ffa500;
 }
-.download-arc{
+.arc-details-date .download-arc{
+
+}
+.download-arc .btn{
+    padding: 0;
     font-size: 24px;
     font-weight: 600;
 }
 .download-arc img{
     width: 24px;
     font-weight: 600;
+}
+.custom-date-picker{
+    width: 100%;
+    padding: 0px 10px;
+    cursor: pointer;
+    position: relative;
+}
+.custom-date-picker input{
+    padding: 2px 30px 2px 40px;
+    border: 1px solid #d4d4d4;
+    border-radius: 20px;
+}
+.custom-date-picker .carat {
+    display: inline-block;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    position: absolute;
+    top: 16px;
+    right: 25px;
+}
+.custom-date-picker .calender {
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    left: 25px;
+}
+.custom-date-picker input:focus{
+   outline: none;
 }
 .arc-details-number{
     display: inline-block;
@@ -49,14 +84,25 @@
 .arc-details-number .arc-details-num-title{
 
 }
-.arc-details-drop .btn{
-    padding: 7px 40px 0px 20px;
+.arc-details-number .arc-details-drop{
+    padding: 7px 40px 4px 20px;
     background-color: #DFE5F0;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 0;
     font-weight: 600;
+    border-bottom-left-radius: 0;
 }
-.arc-details-drop .btn.focus,.arc-details-drop .btn:focus{
+.arc-details-number .arc-details-drop::after{
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+.arc-details-number .arc-details-drop.focus,.arc-details-drop:focus{
     box-shadow: none;
 }
 .arc-details-number .arc-city-holder{
