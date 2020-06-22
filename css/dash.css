@@ -1,0 +1,122 @@
+.bm-dash-main{
+    padding: 25px;
+}
+.dash-title{
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #262246;
+}
+.dashboard-option{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 2px 1px #b6b6b6;
+}
+.language-change{
+    cursor: pointer;
+}
+.new-option{
+    display: none;
+}
+.dashboard-option .dashboard-option-text{
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.chart-holder{
+    margin-bottom: 30px;
+    box-shadow: 0 0 2px 1px #e6e6e6;
+}
+
+.task-holder{
+    box-shadow: 0 0 2px 1px #e6e6e6;
+    background-color: #fff;
+}
+.task-header{
+    padding: 10px 10px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.task-header .task-title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.task-header .task-search{
+    position: relative;
+}
+.task-search input{
+    padding-left: 40px;
+}
+.task-header .task-search .search-icon{
+    position: absolute;
+    left: 15px;
+    top: 6px;
+}
+.filter-dropdown{
+    width: 80px;
+}
+
+.task-content-header{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #969696;
+}
+.task-content-row{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.task-content-row:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
+.task-content-row .task-btn{
+    min-width: 78px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border: 1px solid #e0e1e2;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+.verify-dropdown .custom-dropdown-btn.dropdown-toggle::after{
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.verify-dropdown .custom-dropdown-btn{
+    min-width: 78px;
+    font-size: 14px;
+}
+.task-content-text{
+    font-size: 14px;
+    padding-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+@media  only screen and (max-width : 425px){
+    .dashboard-option{
+        padding: 10px;
+    }
+}
+@media  only screen and (max-width : 768px){
+    .bm-dash-main {
+        padding: 15px;
+    }
+    .chart-holder{
+        margin-bottom: 20px;
+    }
+}

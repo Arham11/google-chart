@@ -1,0 +1,72 @@
+<link href="css/header.css" rel="stylesheet">
+<script>
+    $('[data-toggle="tooltip"]').tooltip()
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+    <a class="navbar-brand m-0" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <div class="nav-divider"></div>
+        <ul class="navbar-nav mr-auto align-items-lg-center">
+            <li class="nav-item dropdown">
+                <div class="custom-dropdown menu-dropdown m-0">
+                    <button class="custom-dropdown-btn dropdown-toggle border-0" type="button" id="Menu"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item">Popular</div>
+                        <div class="dropdown-item">Price-Low</div>
+                        <div class="dropdown-item">Price-High</div>
+                        <div class="dropdown-item">Product Rating</div>
+                        <div class="dropdown-item">Most Reviewed</div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-search-holder">
+                <input class="form-control mr-sm-2 nav-search" type="search" placeholder="Search" aria-label="Search">
+                <span class="search-icon">
+                    <img src="images/icons-svg/search.svg"
+                </div>
+            </li>
+        </ul>
+        
+        <div class="d-flex align-items-center justify-content-between" id="popover-button">
+            <div class="language-change" onclick="changeLanguageByButtonClick()" value="ja" id="language" data-container="#popover-button" data-toggle="tooltip" data-placement="bottom" html="true" title="Change to Japanese Language">
+                <img src="images/lang.jpg">
+            </div>
+           
+            <button class="btn btn-dark new-option">
+                <span class="plus">+</span> 
+                <span>New</span>
+            </button>
+            <div class="nav-divider"></div>
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="images/arham.png">
+                </div>
+                <div class="custom-dropdown menu-dropdown dropdown m-0">
+                    <button class="custom-dropdown-btn dropdown-toggle border-0" type="button" id="profile"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile Name
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="profile">
+                        <div class="dropdown-item">Popular</div>
+                        <div class="dropdown-item">Price-Low</div>
+                        <div class="dropdown-item">Price-High</div>
+                        <div class="dropdown-item">Product Rating</div>
+                        <div class="dropdown-item">Most Reviewed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>

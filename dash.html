@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dash</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!--Load the AJAX API for google Chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="vendors/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script src="vendors/bootstrap-4.5.0/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="vendors/bootstrap-4.5.0/css/bootstrap.min.css">
+
+    <script src="js/main.js"></script>
+    <script src="js/chart.js"></script>
+
+    <!-- css files -->
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/dash.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+    <!-- hide auto-created selection field completely by hiding it's container -->
+<div id="google_translate_element" style="display:none"></div>
+    <div class="container-fluid p-0">
+        <div id="header" class="bg-white"></div>
+        <div class="main-content">
+            <div class="bm-dash-main">
+                <h1 class="dash-title">BM Dashboard</h1>
+                <div class="row">
+                    <div class="col-lg-8 col-12">
+                        <div class="row mx-n2">
+                            <div class="col-md-3 col-6 pb-4 px-2">
+                                <div class="dashboard-option">
+                                    <img src="images/icons-svg/upload.svg">
+                                    <div class="dashboard-option-text">Upload ARC</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 pb-4 px-2">
+                                <div class="dashboard-option">
+                                    <img src="images/icons-svg/check.svg">
+                                    <div class="dashboard-option-text">Upload ARC</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 pb-4 px-2">
+                                <div class="dashboard-option">
+                                    <img src="images/icons-svg/check.svg">
+                                    <div class="dashboard-option-text">Upload ARC</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 pb-4 px-2">
+                                <div class="dashboard-option">
+                                    <img src="images/icons-svg/check.svg">
+                                    <div class="dashboard-option-text">Upload ARC</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="chart-holder" id="chartPr"></div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="chart-holder" id="chartBmPo"></div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="chart-holder" id="chartPay"></div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="chart-holder" id="chartInv"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="task-holder">
+                            <div class="task-header">
+                                <div class="task-title">Tasks</div>
+                                <div class="task-search mx-3 flex-grow-1">
+                                    <input class="form-control" placeholder="Search">
+                                    <span class="search-icon">
+                                        <img src="images/icons-svg/search.svg"
+                                    </div>
+                                </div>
+                                <div class="custom-dropdown filter-dropdown m-0">
+                                    <button class="custom-dropdown-btn dropdown-toggle bg-light" type="button" id="sortBy" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Filter
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <div class="dropdown-item" >Popular</div>
+                                        <div class="dropdown-item">Price-Low</div>
+                                        <div class="dropdown-item">Price-High</div>
+                                        <div class="dropdown-item">Product Rating</div>
+                                        <div class="dropdown-item">Most Reviewed</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="task-content">
+                                <div class="task-content-header bg-light my-3">
+                                    <div class="d-flex align-items-center">
+                                        <input type="checkbox">
+                                        <div class="pl-2">Tasks</div>
+                                    </div>
+                                    <div class="">Actions</div>
+                                </div>
+                                <div class="task-content-data">
+                                    <div class="task-content-row pt-0">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="custom-dropdown verify-dropdown m-0 dropright">
+                                            <button class="custom-dropdown-btn dropdown-toggle bg-light" type="button" id="Verify" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Verify
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <div class="dropdown-item" >Popular</div>
+                                                <div class="dropdown-item">Price-Low</div>
+                                                <div class="dropdown-item">Price-High</div>
+                                                <div class="dropdown-item">Product Rating</div>
+                                                <div class="dropdown-item">Most Reviewed</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="task-btn bg-light">
+                                            Update
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="task-btn bg-light">
+                                            View
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="custom-dropdown verify-dropdown m-0 dropright">
+                                            <button class="custom-dropdown-btn dropdown-toggle bg-light" type="button" id="Verify" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Verify
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <div class="dropdown-item" >Popular</div>
+                                                <div class="dropdown-item">Price-Low</div>
+                                                <div class="dropdown-item">Price-High</div>
+                                                <div class="dropdown-item">Product Rating</div>
+                                                <div class="dropdown-item">Most Reviewed</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="task-btn bg-light">
+                                            Update
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row pt-0">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="custom-dropdown verify-dropdown m-0 dropright">
+                                            <button class="custom-dropdown-btn dropdown-toggle bg-light" type="button" id="Verify" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Verify
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <div class="dropdown-item" >Popular</div>
+                                                <div class="dropdown-item">Price-Low</div>
+                                                <div class="dropdown-item">Price-High</div>
+                                                <div class="dropdown-item">Product Rating</div>
+                                                <div class="dropdown-item">Most Reviewed</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="task-btn bg-light">
+                                            Update
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="task-btn bg-light">
+                                            View
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="custom-dropdown verify-dropdown m-0 dropright">
+                                            <button class="custom-dropdown-btn dropdown-toggle bg-light" type="button" id="Verify" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Verify
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <div class="dropdown-item" >Popular</div>
+                                                <div class="dropdown-item">Price-Low</div>
+                                                <div class="dropdown-item">Price-High</div>
+                                                <div class="dropdown-item">Product Rating</div>
+                                                <div class="dropdown-item">Most Reviewed</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-content-row">
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox">
+                                            <div class="pl-2 task-content-text"> <b>PO *23512</b> for  <b>PR *321234</b> is generated</div>
+                                        </div>
+                                        <div class="task-btn bg-light">
+                                            Update
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+
+</body>
+
+</html>

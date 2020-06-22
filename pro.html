@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- external vendors js file -->
+    <script src="vendors/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script src="vendors/bootstrap-4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="vendors/DataTables-1.10.21/datatables.min.js"></script>
+
+    <!-- custom js file -->
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+
+    <!-- external vendors css files -->
+    <link rel="stylesheet" href="vendors/bootstrap-4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/DataTables-1.10.21/datatables.min.css"/>
+
+    <!-- custom css files -->
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <div id="header" class="bg-white"></div>
+        <div class="main-content">
+            <div class="bm-profile">
+                <div class="profile-head">
+                    <div class="arc-details-date">
+                        <div class="">
+                            <div class="breadcrumb-link">
+                                <a href="#">Dashboard</a>
+                                <span class="">></span>
+                                <a href="#">ARC</a>
+                            </div>
+                            <div class="">
+                                <div class="download-arc">
+                                    <img src="images/icons-svg/download.svg">
+                                    ARC
+                                </div>
+                                <div class="date-arc">
+
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-dark upload-option">
+                            <img src="images/icons-svg/upload-light.svg">
+                            Upload ARC
+                        </button>
+                    </div>
+                    <div class="arc-details-number">
+                        <div class="arc-details-num-title">
+                            <div class="custom-dropdown arc-details-drop dropdown mb-0">
+                                <button class="btn dropdown-toggle ml-0" type="button" id="arcDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ANNUAL RATE CONTRACT
+                                </button>
+                                <div class="dropdown-menu py-0" aria-labelledby="arcDrop">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="arc-city-holder">
+                            <div class="arc-city-content">
+                                <div class="arc-city-type">
+                                    BOOKED CITY
+                                </div>
+                                <div class="arc-city-num">
+                                    13,396
+                                </div>
+                            </div>
+                            <div class="arc-city-content">
+                                <div class="arc-city-type">
+                                    DELIVERED CITY
+                                </div>
+                                <div class="arc-city-num">
+                                    1116
+                                </div>
+                            </div>
+                            <div class="arc-city-content">
+                                <div class="arc-city-type">
+                                    PENDING CITY
+                                </div>
+                                <div class="arc-city-num">
+                                    562
+                                </div>
+                            </div>
+                            <div class="arc-city-content pr-0">
+                                <div class="arc-city-type">
+                                    BAMLANCE CITY IN ARC
+                                </div>
+                                <div class="arc-city-num border-0">
+                                    11,000 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-table-main">
+                    <div class="data-table-search">
+                        <div class="table-search-input">
+                            <input class="form-control" placeholder="Search by ARC NO, SKU, Plant etc ">
+                            <span class="search-icon">
+                                <img src="images/icons-svg/search.svg">
+                            </span>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                            <div class="custom-dropdown table-search-dropdown dropdown">
+                                <button class="btn dropdown-toggle ml-0" type="button" id="tableStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Status
+                                </button>
+                                <div class="dropdown-menu py-0" aria-labelledby="tableStatus">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                            <div class="custom-dropdown table-search-dropdown dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="tableAddress" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Address
+                                </button>
+                                <div class="dropdown-menu py-0" aria-labelledby="tableAddress">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                            <div class="custom-dropdown table-search-dropdown dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="tableData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Data
+                            </button>
+                            <div class="dropdown-menu py-0" aria-labelledby="tableStatus">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-table">
+                        <table id="arcTable" class="arc-table nowrap stripe hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th class="pr-3">Quick Action</th>
+                                    <th class="text-right">ARC No</th>
+                                    <th>ARC Date</th>
+                                    <th>Company Name</th>
+                                    <th>Delivery Location</th>
+                                    <th class="text-center pr-3">Total ARC Qty</th>
+                                    <th class="text-center pr-3">PR Request City</th>
+                                    <th class="text-center pr-3">PO Vendor City</th>
+                                    <th class="text-right">Information</th>
+                                    <th class="text-right">Inventory</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags blue">Arc Created</div>
+                                    </td>
+                                    <td>19/Sept/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Jamnagar</td>
+                                    <td class="text-right">7,800</td>
+                                    <td class="text-right">116</td>
+                                    <td class="text-right">Mumbai</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">899</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags green">ARC Accepted</div>
+                                    </td>
+                                    <td>11/Sept/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Kasol</td>
+                                    <td class="text-right">116,800</td>
+                                    <td class="text-right">786</td>
+                                    <td class="text-right">Himachal</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">1344</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags red">Revision Requested</div>
+                                    </td>
+                                    <td>16/Nov/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Jamnagar</td>
+                                    <td class="text-right">28949</td>
+                                    <td class="text-right">1116</td>
+                                    <td class="text-right">Delhi</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">819</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags blue">Arc Created</div>
+                                    </td>
+                                    <td>24/Aug/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Shimla</td>
+                                    <td class="text-right">1611</td>
+                                    <td class="text-right">98</td>
+                                    <td class="text-right">Mumbai</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">849</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags blue">Arc Created</div>
+                                    </td>
+                                    <td>02/Jan/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Jamnagar</td>
+                                    <td class="text-right">20,800</td>
+                                    <td class="text-right">1160</td>
+                                    <td class="text-right">Mumbai</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">1344</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>486516159</div>
+                                        <div class="arc-tags red">Revision Requested</div>
+                                    </td>
+                                    <td>27/Jul/2019</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Dalhousie</td>
+                                    <td class="text-right">2048</td>
+                                    <td class="text-right">99</td>
+                                    <td class="text-right">Manali</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">1344</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>65651894</div>
+                                        <div class="arc-tags green">ARC Accepted</div>
+                                    </td>
+                                    <td>11/10/2019</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Kasol</td>
+                                    <td class="text-right">88,800</td>
+                                    <td class="text-right">5859</td>
+                                    <td class="text-right">Aura</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">849</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags blue">Arc Created</div>
+                                    </td>
+                                    <td>19/Sept/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Jamnagar</td>
+                                    <td class="text-right">7,800</td>
+                                    <td class="text-right">116</td>
+                                    <td class="text-right">Mumbai</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">899</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags green">ARC Accepted</div>
+                                    </td>
+                                    <td>11/Sept/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Kasol</td>
+                                    <td class="text-right">116,800</td>
+                                    <td class="text-right">786</td>
+                                    <td class="text-right">Himachal</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">1344</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags red">Revision Requested</div>
+                                    </td>
+                                    <td>16/Nov/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Jamnagar</td>
+                                    <td class="text-right">28949</td>
+                                    <td class="text-right">1116</td>
+                                    <td class="text-right">Delhi</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">819</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags blue">Arc Created</div>
+                                    </td>
+                                    <td>24/Aug/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Shimla</td>
+                                    <td class="text-right">1611</td>
+                                    <td class="text-right">98</td>
+                                    <td class="text-right">Mumbai</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">849</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>20251058008</div>
+                                        <div class="arc-tags blue">Arc Created</div>
+                                    </td>
+                                    <td>02/Jan/19</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Jamnagar</td>
+                                    <td class="text-right">20,800</td>
+                                    <td class="text-right">1160</td>
+                                    <td class="text-right">Mumbai</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">1344</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>486516159</div>
+                                        <div class="arc-tags red">Revision Requested</div>
+                                    </td>
+                                    <td>27/Jul/2019</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Dalhousie</td>
+                                    <td class="text-right">2048</td>
+                                    <td class="text-right">99</td>
+                                    <td class="text-right">Manali</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">1344</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="quick-act-checkbox">
+                                            <input type="checkbox">
+                                        </span>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/eye.svg">
+                                        </div>
+                                        <div class="quick-act-btn">
+                                            <img src= "images/icons-svg/download.svg">
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div>65651894</div>
+                                        <div class="arc-tags green">ARC Accepted</div>
+                                    </td>
+                                    <td>11/10/2019</td>
+                                    <td>Reliance gas Piplines</td>
+                                    <td>Kasol</td>
+                                    <td class="text-right">88,800</td>
+                                    <td class="text-right">5859</td>
+                                    <td class="text-right">Aura</td>
+                                    <td class="text-right">loren epsum</td>
+                                    <td class="text-right">849</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+
+</body>
+
+</html>
